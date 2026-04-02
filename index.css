@@ -1,0 +1,605 @@
+:root {
+    --blu-notte: #060729;
+    --bordeaux: #b13a48;
+    --arancione: #e7a565;
+
+    --text: #e7a565;
+    --text-dark: #060729;
+    --border: rgba(255, 255, 255, 0.15);
+    --placeholder: rgba(255, 255, 255, 0.5);
+}
+
+
+/* FONTS */
+
+@font-face {
+    font-family: 'LaBelleAurore';
+    src: url('fonts/LaBelleAurore.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+
+/* BASE */
+
+body {
+    margin: 0;
+    color: var(--arancione);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(0, 180, 160, 0.16), transparent 55%),
+        radial-gradient(circle at 85% 70%, rgba(0, 150, 255, 0.14), transparent 60%),
+        radial-gradient(circle at 60% 90%, rgba(0, 200, 180, 0.12), transparent 55%),
+        linear-gradient(160deg, #03041a, #060729, #020314);
+}
+
+
+/* HERO */
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 120px 20px;
+}
+
+.hero-text {
+    width: 50%;
+    z-index: 2;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background-image: url("sfondi/Front_draghi.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right top;
+
+    pointer-events: none;
+}
+
+.hero-sub {
+    color: var(--bordeaux);
+    font-size: 32px;
+    margin: 5px 0;
+}
+
+
+/* HEADER */
+
+header {
+    padding-top: 40px;
+    font-family: 'LaBelleAurore';
+}
+
+header h1 {
+    font-size: 72px;
+    margin: 0;
+    color: var(--bordeaux);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    color: var(--bordeaux);
+    font-family: 'LaBelleAurore';
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+
+/* SECTIONS */
+
+section {
+    padding-top: 24px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+section p {
+    color: #e8a86a;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+
+/* LAYOUT COLONNE */
+
+.info-columns {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.map-column,
+.side-column {
+    width: calc(50% - 20px);
+    min-width: 0;
+}
+
+.side-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.map-column h2,
+.side-column h2 {
+    margin-top: 0;
+}
+
+.map-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* MAPPA */
+
+.map iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    border-radius: 10px;
+    display: block;
+}
+
+
+/* ACCOMMODATION (colonna dx) */
+
+.accommodation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.accommodation.active {
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.accommodation button {
+    margin: 6px 0 4px;
+}
+
+/* FORM STANZE */
+
+.room-form {
+    display: none;
+}
+
+.room-form.show {
+    display: flex;
+    flex-direction: column;
+    max-height: 260px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* DRESS CODE */
+
+.dresscode {
+    max-width: 700px;
+}
+
+
+/* COUNTDOWN */
+
+.countdown {
+    font-size: 30px;
+    margin-top: 12px;
+    font-weight: 400;
+    color: var(--arancione);
+}
+
+
+/* TIMELINE */
+
+.timeline {
+    text-align: left;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+/* linea verticale */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--blu-notte);
+    box-shadow: 0 0 0 4px #06072938;
+}
+
+.timeline li {
+    position: relative;
+    margin: 22px 0;
+    padding-left: 40px;
+    font-size: 18px;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* ritardo progressivo */
+.timeline li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.timeline li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.timeline li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.timeline li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* animazione */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* pallino */
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--arancione);
+    box-shadow: 0 0 0 4px rgba(231, 165, 101, 0.15);
+}
+
+/* orario */
+.timeline b {
+    display: block;
+    font-weight: 500;
+    color: var(--arancione);
+    /* 🔥 coerente */
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+/* titolo evento */
+.timeline span {
+    color: var(--text);
+    /* bianco */
+    font-weight: 300;
+}
+
+/* dettaglio (opzionale se separi titolo/descrizione) */
+.timeline small {
+    display: block;
+    color: var(--placeholder);
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+
+/* FORM RSVP */
+
+.rsvp form {
+    max-width: 800px;
+    margin: auto;
+}
+
+.rsvp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+.form-group label {
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--arancione);
+}
+
+.rsvp-grid .form-group label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-group textarea {
+    height: 100%;
+}
+
+
+.full {
+    grid-column: 1 / -1;
+    margin-top: 16px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Rendi il blocco titolo coerente con i form-group */
+#food-block {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* label identica agli altri */
+#food-block label {
+    font-size: 18px;
+    color: var(--arancione);
+}
+
+/* allineamento verticale fine */
+#menu-choice,
+#allergies {
+    margin-top: 0;
+}
+
+/* INPUTS */
+
+input,
+textarea,
+select {
+    width: 80%;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    color: var(--text);
+    font-size: 15px;
+
+    transition: all .25s ease;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--placeholder);
+}
+
+select {
+    width: 80%;
+    padding: 16px 18px;
+    padding-right: 42px;
+
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    color: var(--text);
+    font-size: 15px;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* freccia più sottile e meno invasiva */
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2l4 4 4-4' stroke='%23cfd6e4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px;
+
+    transition: all .25s ease;
+}
+
+select option {
+    background: var(--blu-notte);
+    color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--arancione);
+    box-shadow: 0 0 0 2px rgba(231, 165, 101, 0.2);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--arancione);
+    box-shadow: 0 0 0 2px rgba(231, 165, 101, 0.15);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]:focus {
+    letter-spacing: 0.5px;
+}
+
+/* Chrome autofill fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.02) inset !important;
+    box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.02) inset !important;
+
+    -webkit-text-fill-color: var(--text) !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* BUTTON */
+
+button {
+    width: 100%;
+    padding: 16px;
+
+    border: none;
+    border-radius: 40px;
+
+    background: var(--arancione);
+    color: var(--text-dark);
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+button:hover {
+    background: var(--bordeaux);
+    color: white;
+}
+
+
+/* LISTA NOZZE */
+
+.gifts-columns {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.gifts-text {
+    flex: 2;
+}
+
+.gifts-actions {
+    flex: 1;
+}
+
+
+/* FOOTER */
+
+.footer-columns {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.footer-col {
+    text-align: center;
+}
+
+
+/* DECORAZIONE FINALE */
+
+.bottom-decoration {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+/* contenitore che definisce il taglio */
+.bottom-decoration::before {
+    content: "";
+    display: block;
+    height: 200px;
+}
+
+/* immagine */
+.bottom-decoration img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(0); /* CAMBIATO: prima era 120px */
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .info-columns {
+        flex-direction: column;
+    }
+
+    .map-column,
+    .side-column {
+        width: 100%;
+    }
+
+    .gifts-columns {
+        flex-direction: column;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
