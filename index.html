@@ -3,10 +3,261 @@
 
 <head>
 
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+default-src 'self';
+img-src 'self' data:;
+script-src 'self';
+style-src 'self' 'unsafe-inline';
+frame-src https://www.google.com https://script.google.com;
+connect-src https://script.google.com https://script.googleusercontent.com;
+">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="index.css">
+    <title>Sara & Samuel</title>
+
 </head>
 
 <body>
-    <div>
-    <b><span style="position:relative;color:red;top:24px;left:20%;font-size:46px;">Sito in costruzione, <br>torna domani please!</span></b>
+
+    <header class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Sara & Samuel</h1>
+                <p class="hero-sub-date">11 settembre 2026</p>
+                <p class="hero-sub">Castello di Pavone</p>
+            </div>
+
+            <ul class="timeline">
+                <li>
+                    <b>17:00</b>
+                    <span>Cerimonia – Rito in cortile</span>
+                </li>
+                <li>
+                    <b>18:00</b>
+                    <span>Brindiamo! – Aperitivo buffet e musica dal vivo</span>
+                </li>
+                <li>
+                    <b>19:30</b>
+                    <span>Si mangia! – Cena in una sala medievale</span>
+                </li>
+                <li>
+                    <b>22:30</b>
+                    <span>Festa – Taglio torta e poi… tutti a ballare!</span>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="info-columns">
+        <div class="map-column">
+            <section class="map">
+                <h2>Location</h2>
+                <p>Cerimonia e festeggiamenti si terranno qui...</p>
+                <iframe src="https://www.google.com/maps?q=Castello+di+Pavone&output=embed" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p>Apri la mappa per avere tutte le indicazioni su come arrivare!</p>
+                <h3>Attenzione! Al castello non sono ammessi animali</h3>
+            </section>
+        </div>
+
+        <div class="side-column">
+            <section class="accommodation">
+                <h2>Vieni da fuori?</h2>
+                <h3>Lo sappiamo, la location non è dietro l'angolo e vogliamo tutti festeggiare fino a tardi...</h3>
+                <p>
+                    Allora perchè non approfittare e passare una notte in una stanza di un castello dell'anno
+                    mille?!<br>
+                    è possibile prenotare varie stanze, da 2-4 persone l'una, ma faccelo sapere per tempo perchè vanno a
+                    ruba!
+                </p>
+                <button type="button" id="room-btn">
+                    Voglio una stanza medievale!
+                </button>
+
+                <div id="room-form" class="room-form">
+
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quanti siete?</label>
+                        <input type="number" min="1">
+                    </div>
+
+                    <button type="button">Chiedi una stanza</button>
+
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+    <section class="rsvp">
+        <h2>Conferma presenza</h2>
+
+        <form class="rsvp-grid" id="rsvp-form"
+            action="https://script.google.com/macros/s/AKfycbzdZuvzBKH_BNQhEtA9MdJFX6OqQltWJmUKukHInzdOYVccLbJUiypPYykCghnqCIL-/exec"
+            method="POST" target="hidden_iframe">
+
+            <!-- Nome principale -->
+            <div class="form-group">
+                <label>Nome e cognome</label>
+                <input type="text" name="main_name" required maxlength="100">
+            </div>
+
+            <!-- Partecipazione -->
+            <div class="form-group">
+                <label>Parteciperai?</label>
+                <select name="attendance" id="attendance" required>
+                    <option value="">Seleziona</option>
+                    <option value="yes">Sì 🎉</option>
+                    <option value="no">No 😢</option>
+                </select>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <!-- BLOCCO OSPITI -->
+            <div id="guests-section" class="full guests">
+
+                <h3>Ospiti</h3>
+                <p class="hint">Aggiungi una riga per ogni persona (anche te stesso)</p>
+
+                <div id="guests-container">
+
+                    <div class="guest">
+                        <input type="text" name="guest_name[]" placeholder="Nome">
+
+                        <select name="menu[]">
+                            <option value="">Menù</option>
+                            <option value="carne">Carne</option>
+                            <option value="vegano">Vegano</option>
+                        </select>
+
+                        <input type="text" name="allergies[]" placeholder="Allergie">
+                    </div>
+
+                </div>
+
+                <button type="button" id="add-guest" class="add-btn">
+                    + Aggiungi persona
+                </button>
+
+
+            </div>
+
+            <!-- Note -->
+            <div class="form-group full">
+                <textarea name="notes" placeholder="Note (opzionale)"></textarea>
+            </div>
+
+            <button class="full" type="submit">Conferma presenza</button>
+
+        </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+    </section>
+
+    <section class="gifts">
+        <h2>Un fiorino!</h2>
+        <div class="gifts-columns">
+            <div class="gifts-text">
+                <p>
+                    Tranquilli, non vi chiediamo nient'altro che la vostra presenza e la voglia di festeggiare con
+                    noi!<br><br>
+                    Ma sappiamo anche che molti ce lo chiederanno, quindi per semplificare un po' le cose abbiamo
+                    creato una piccola lista nozze amazon su cui sbizzarrirvi e per chi non trovasse nulla che lo ispira
+                    vi mettiamo qui a
+                    fianco l'iban per contibuire al nostro viaggio di nozze in Giappone
+                </p>
+            </div>
+
+            <div class="gifts-actions">
+                <p>
+                    <b>IBAN:</b><br>
+                    IT00X0000000000000000000000
+                </p>
+                <p>
+                    <a href="https://www.amazon.it/wedding/tuo-link-lista-nozze" target="_blank">
+                        Vai alla lista nozze Amazon
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="bottom-decoration">
+        <img src="./sfondi/Retro.png" alt="">
     </div>
+
+
+    <section class="countdown">
+        <div class="elegant-divider">
+            <span class="line"></span>
+            <img src="favicon.png" alt="">
+            <span class="line"></span>
+        </div>
+        <h2 class="subtitle">Mancano</h2>
+        <div class="countdown-box">
+            <div class="time">
+                <span class="number">130</span>
+                <span class="label">GIORNI</span>
+            </div>
+            <div class="separator"></div>
+            <div class="time">
+                <span class="number">01</span>
+                <span class="label">ORE</span>
+            </div>
+            <div class="separator"></div>
+            <div class="time">
+                <span class="number">12</span>
+                <span class="label">MINUTI</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="dresscode">
+        <h2>Dress code</h2>
+        <p>Noi saremo quelli vestiti da sposi, voi vestitevi come vi pare!</p>
+        <p>Indossate quello che vi piace, anche se non è elegante, anche se volete comprare un vestitino su Vinted...
+            massima libertà! Vi consigliamo solo di non indossare tacchi a spillo, quando hanno costruito il castello
+            hanno messo un sacco di sanpietrini!
+        </p>
+    </section>
+    
+    <section class="memories">
+        <h2>Condividi i tuoi scatti preferiti</h2>
+        <p>
+            Questo è uno spazio dove raccogliere tutte le foto e i video della giornata 📸<br>
+            Quel giorno, potrai scansionare il QR code qui sotto, caricare i tuoi scatti e vedere ciò che hanno
+            immortalato gli altri ospiti!
+        </p>
+        <img src="qr-dot-memories.png" alt="QR code Dot Memories">
+    </section>
+    <footer>
+        <div class="footer-columns">
+
+            <div class="footer-col">
+                <h3>Sara</h3>
+                <p>+39 33945664</p>
+            </div>
+            <div class="footer-col">
+                <h3>Samuel</h3>
+                <p>+39 3584564</p>
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
