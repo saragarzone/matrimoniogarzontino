@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const participantsContainer = document.getElementById("participants-container");
     const attendance = document.getElementById("attendance");
     const weddingFields = document.getElementById("wedding-fields");
+    const accommodationSection = document.getElementById("accommodation-section");
 
     function createParticipantRow(showMenu = false) {
         return `
@@ -52,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     ${showMenu ? "required" : ""}
                 >
                     <option value="">Menu</option>
-                    <option value="carne">Onnivoro (carne+pesce)</option>
-                    <option value="vegetariano">Vegano</option>
+                    <option value="onnivoro">Onnivoro (carne+pesce)</option>
+                    <option value="vegano">Vegano</option>
                 </select>
 
                 <button type="button" class="remove-btn">×</button>
@@ -67,6 +68,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const show = attendance.value === "yes";
 
         weddingFields.classList.toggle("show", show);
+
+        if (accommodationSection) {
+            accommodationSection.hidden = !show;
+        }
+
+        const mainRow = document.getElementById("main-person-row");
+        const mainMenu = document.getElementById("main-menu");
+
+        if (mainRow) {
+            mainRow.classList.toggle("with-menu", show);
+        }
+
+        if (mainMenu) {
+            if (show) {
+                mainMenu.setAttribute("required", "required");
+            } else {
+                mainMenu.removeAttribute("required");
+                mainMenu.value = "";
+            }
+        }
 
         document.querySelectorAll(".participant-row").forEach(row => {
             row.classList.toggle("with-menu", show);
@@ -139,7 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (weddingFields) {
                     weddingFields.classList.remove("show");
                 }
-
+                if (accommodationSection) {
+                    accommodationSection.hidden = true;
+                }
                 if (participantsContainer) {
                     participantsContainer.innerHTML = "";
                 }
@@ -159,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 : "Voglio una stanza medievale";
         });
     }
-    
+
     const btn = document.getElementById("show-iban-btn");
     const iban = document.getElementById("iban-text");
 
