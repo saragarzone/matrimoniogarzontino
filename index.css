@@ -394,6 +394,8 @@ textarea {
 input::placeholder,
 textarea::placeholder {
     color: var(--placeholder);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
 }
 
 select {
@@ -460,8 +462,8 @@ select:-webkit-autofill {
 }
 
 .form-group label {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 400;
     color: var(--arancione);
     margin: 0;
 }
@@ -524,7 +526,7 @@ button:hover {
 
 .rsvp form {
     width: 100%;
-    margin: 0;
+    margin: 20px 0 0 0;
 }
 
 .rsvp-grid {
@@ -533,12 +535,12 @@ button:hover {
     gap: 18px 24px;
 }
 
-.rsvp-grid > .form-group.full:nth-of-type(1),
-.rsvp-grid > .form-group.full:nth-of-type(2) {
+.rsvp-grid>.form-group.full:nth-of-type(1),
+.rsvp-grid>.form-group.full:nth-of-type(2) {
     grid-column: auto;
 }
 
-.rsvp-grid > button.full {
+.rsvp-grid>button.full {
     grid-column: 1 / -1;
     margin-top: 8px;
 }
@@ -914,8 +916,8 @@ button:hover {
         gap: 16px;
     }
 
-    .rsvp-grid > .form-group.full:nth-of-type(1),
-    .rsvp-grid > .form-group.full:nth-of-type(2) {
+    .rsvp-grid>.form-group.full:nth-of-type(1),
+    .rsvp-grid>.form-group.full:nth-of-type(2) {
         grid-column: 1 / -1;
     }
 
@@ -946,16 +948,25 @@ button:hover {
 
     .participant-row input {
         grid-column: 1;
+        grid-row: 1;
     }
 
     .remove-btn {
         grid-column: 2;
+        grid-row: 1;
         width: 42px;
         height: 42px;
         min-width: 42px;
         margin: 0;
         font-size: 22px;
         line-height: 1;
+    }
+
+    .participant-row.with-menu .guest-menu {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        display: block;
     }
 
     .guest-menu {
@@ -985,7 +996,7 @@ button:hover {
         font-size: 0.9em;
     }
 
-    .rsvp-grid > button.full {
+    .rsvp-grid>button.full {
         margin-top: 4px;
     }
 }
@@ -1152,7 +1163,7 @@ button:hover {
     .memories-content {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 6px;
     }
 
     .qr {
