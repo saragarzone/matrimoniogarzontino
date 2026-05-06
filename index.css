@@ -8,7 +8,7 @@
     --border: rgba(255, 255, 255, 0.15);
     --placeholder: rgba(255, 255, 255, 0.5);
 
-    --left-col: clamp(4.5rem, 22vw, 6rem);
+    --left-col: clamp(6.5rem, 24vw, 8.5rem);
     --center-col: clamp(1.8rem, 7vw, 2.4rem);
     --ball-size: clamp(1.25rem, 4vw, 1.55rem);
     --line-offset: -1.4rem;
@@ -153,7 +153,6 @@ h3 {
 }
 
 .full-row,
-.memories,
 .rsvp {
     grid-column: 1 / -1;
 }
@@ -255,6 +254,21 @@ h3 {
     z-index: 3;
 }
 
+.timeline-img {
+    width: clamp(5rem, 16vw, 7rem);
+    height: clamp(5rem, 16vw, 7rem);
+
+    object-fit: contain;
+    object-position: center top;
+
+    display: block;
+
+    transform: scale(1.18);
+    transform-origin: center top;
+
+    margin: -0.8rem auto 0;
+}
+
 .timeline li {
     position: relative;
     display: grid;
@@ -323,14 +337,6 @@ h3 {
 .left {
     text-align: center;
     line-height: 1;
-}
-
-.left svg {
-    width: clamp(3rem, 13vw, 4rem);
-    height: clamp(3rem, 13vw, 4rem);
-    color: var(--arancione);
-    stroke-width: 1.8;
-    opacity: 0.9;
 }
 
 .right {
@@ -531,7 +537,7 @@ button:hover {
 
 .rsvp-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 18px 24px;
 }
 
@@ -635,7 +641,7 @@ button:hover {
 }
 
 .accommodation button {
-    margin-top: auto;
+    margin-top: 16px;
 }
 
 .room-fields {
@@ -651,6 +657,22 @@ button:hover {
 
 .room-fields .form-group {
     min-width: 0;
+}
+
+#accommodation-section {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: auto;
+    margin-top: 10px;
+}
+
+#accommodation-section[hidden] {
+    display: none;
+}
+
+.dresscode,
+.memories {
+    grid-column: auto;
 }
 
 /* =========================
@@ -871,6 +893,17 @@ button:hover {
 /* =========================
    FOOTER / CONTATTI
 ========================= */
+.artist-credit {
+    max-width: 950px;
+    margin: 30px auto 0;
+    padding: 0 22px;
+
+    color: #e7a565;
+    font-size: clamp(18px, 2vw, 26px);
+    line-height: 1.35;
+
+    text-align: center;
+}
 
 .final-section {
     width: min(100%, 1180px);
