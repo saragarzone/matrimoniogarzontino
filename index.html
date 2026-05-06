@@ -1,4 +1,321 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+default-src 'self';
+img-src 'self' data:;
+script-src 'self';
+style-src 'self' 'unsafe-inline';
+frame-src https://www.google.com https://script.google.com;
+connect-src https://script.google.com https://script.googleusercontent.com;
+">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="index.css">
+    <title>Sara & Samuel</title>
+
+</head>
+
 <body>
-    <div>
-    <b><span style="position:relative;color:red;top:24px;left:20%;font-size:46px;">Sito in costruzione, <br>torna domani please!</span></b>
+
+    <header class="hero">
+        <div class="hero-image"></div>
+    </header>
+
+    <main class="main-grid">
+
+        <section class="hero-text full-row">
+            <h1>Sara & Samuel</h1>
+            <p class="hero-sub-date">11 settembre 2026</p>
+            <p class="hero-sub">Castello di Pavone</p>
+        </section>
+
+        <section class="wedding">
+            <h2>Timeline</h2>
+            <ul class="timeline">
+                <li>
+
+                    <div class="col left">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="26" cy="36" r="11" />
+                            <circle cx="38" cy="30" r="11" />
+                            <path d="M18 48 Q26 54 34 48" />
+                            <path d="M30 20 Q38 14 46 20" />
+                        </svg>
+                    </div>
+                    <div class="col center">
+                        <div class="dot"></div>
+                    </div>
+                    <div class="col right">
+                        <h3>17:00 - Cerimonia</h3>
+                        <p>Rito in cortile</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="col left">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 8 L28 32 L20 32 Z" />
+                            <path d="M44 8 L36 32 L44 32 Z" />
+                            <line x1="20" y1="32" x2="20" y2="48" />
+                            <line x1="44" y1="32" x2="44" y2="48" />
+                            <line x1="16" y1="48" x2="24" y2="48" />
+                            <line x1="40" y1="48" x2="48" y2="48" />
+                        </svg>
+                    </div>
+                    <div class="col center">
+                        <div class="dot"></div>
+                    </div>
+                    <div class="col right">
+                        <h3>18:00 - Brindiamo!</h3>
+                        <p>Aperitivo buffet e musica dal vivo</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="col left">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 40 H48" />
+                            <path d="M20 40 A12 12 0 0 1 44 40" />
+                            <circle cx="32" cy="28" r="2" />
+                        </svg>
+                    </div>
+                    <div class="col center">
+                        <div class="dot"></div>
+                    </div>
+                    <div class="col right">
+                        <h3>19:30 - Si mangia!</h3>
+                        <p>Cena in una sala medievale</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="col left">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="20" y="28" width="24" height="12" />
+                            <rect x="16" y="40" width="32" height="12" />
+                            <line x1="32" y1="20" x2="32" y2="28" />
+                            <circle cx="32" cy="18" r="2" />
+                        </svg>
+                    </div>
+                    <div class="col center">
+                        <div class="dot"></div>
+                    </div>
+                    <div class="col right">
+                        <h3>22:30 - Festa</h3>
+                        <p>Taglio torta e poi… Tutti a ballare!</p>
+                    </div>
+                </li>
+
+                <span class="timeline-end-line left-end"></span>
+                <span class="timeline-end-line right-end"></span>
+            </ul>
+        </section>
+
+        <section class="map">
+            <h2>Location</h2>
+            <p>Cerimonia e festeggiamenti si terranno qui...</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11206.511039676765!2d7.855899999999991!3d45.436074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4788845ab3c3efd1%3A0x24c65c6b9e1e3c26!2sCastello%20di%20Pavone!5e0!3m2!1sit!2sus!4v1778055705631!5m2!1sit!2sus"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>Apri la mappa per avere tutte le indicazioni su come arrivare</p>
+            <h3>Attenzione! Al castello non sono ammessi animali</h3>
+        </section>
+
+
+
+        <section class="rsvp">
+            <h2>Conferma presenza</h2>
+
+            <form class="rsvp-grid" id="rsvp-form"
+                action="https://script.google.com/macros/s/AKfycbzdZuvzBKH_BNQhEtA9MdJFX6OqQltWJmUKukHInzdOYVccLbJUiypPYykCghnqCIL-/exec"
+                method="POST" target="hidden_iframe">
+
+                <div class="form-group">
+                    <label>Nome e cognome</label>
+                    <input type="text" name="main_name" required maxlength="100">
+                </div>
+
+                <div class="form-group">
+                    <label>Parteciperai?</label>
+                    <select name="attendance" id="attendance" required>
+                        <option value="">Seleziona</option>
+                        <option value="yes">Sì 🎉</option>
+                        <option value="no">No 😢</option>
+                    </select>
+                </div>
+
+                <div class="form-group full">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div id="guests-section" class="full guests">
+                    <h3>Ospiti</h3>
+                    <p class="hint">Aggiungi una riga per ogni persona, anche te stesso</p>
+
+                    <div id="guests-container">
+                        <div class="guest">
+                            <input type="text" name="guest_name[]" placeholder="Nome">
+
+                            <select name="menu[]">
+                                <option value="">Menù</option>
+                                <option value="carne">Carne</option>
+                                <option value="vegano">Vegano</option>
+                            </select>
+
+                            <input type="text" name="allergies[]" placeholder="Allergie">
+                        </div>
+                    </div>
+
+                    <button type="button" id="add-guest" class="add-btn">+ Aggiungi persona</button>
+                </div>
+
+                <div class="form-group full">
+                    <textarea name="notes" placeholder="Note (opzionale)"></textarea>
+                </div>
+
+                <button class="full" type="submit">Conferma presenza</button>
+            </form>
+
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
+        </section>
+        <section class="accommodation">
+            <h2>Vieni da fuori?</h2>
+            <h3>Lo sappiamo, la location non è dietro l'angolo e vogliamo tutti festeggiare fino a tardi...</h3>
+            <p>
+                Allora perchè non approfittare e passare una notte in una stanza di un castello dell'anno mille?!<br>
+                è possibile prenotare varie stanze, da 2-4 persone l'una, ma faccelo sapere per tempo perchè vanno a
+                ruba!
+            </p>
+            <button type="button" id="room-btn">Voglio una stanza medievale!</button>
+
+            <div id="room-form" class="room-form">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text">
+                </div>
+
+                <div class="form-group">
+                    <label>Quanti siete?</label>
+                    <input type="number" min="1">
+                </div>
+
+                <button type="button">Chiedi una stanza</button>
+            </div>
+        </section>
+        <section class="dresscode">
+            <h2>Dress code</h2>
+            <p>Noi saremo quelli vestiti da sposi, voi vestitevi come vi pare!</p>
+            <p>
+                Indossate quello che vi piace, anche se non è elegante, anche se volete comprare un vestitino su
+                Vinted...
+                massima libertà! Vi consigliamo solo di non indossare tacchi a spillo, quando hanno costruito il
+                castello
+                hanno messo un sacco di sanpietrini!
+            </p>
+        </section>
+        <section class="gifts-text">
+            <h2>Un fiorino!</h2>
+
+            <p>
+                Tranquilli, scherziamo! Non vi chiediamo nient'altro che la vostra presenza e la voglia di festeggiare
+                con
+                noi...<br><br>
+                Ma sappiamo che molti ce lo chiederanno, quindi per semplificare un po' le cose ecco qualcosa che può
+                esserci utile:
+            </p>
+        </section>
+
+        <section class="gifts-actions">
+            <h4 class="gifts-title">Vai alla lista nozze su</h4>
+            <a href="https://www.amazon.it/wedding/guest-view/3B5CPEKY1SWQ0" class="amazon-btn" target="_blank"></a>
+            <p>
+                Oppure, se può farti piacere contribuire al nostro viaggio di nozze in Giappone, ti lasciamo il nostro
+                IBAN:<br>
+                <button class="iban-btn" id="show-iban-btn">Mostra IBAN</button>
+            <p id="iban-text"></p>
+        </section>
+
+
+        <section class="memories">
+            <h2>Condividi i tuoi scatti preferiti</h2>
+            <div class="memories-content">
+                <div class="memories-text">
+                    <p>
+                        Questo è uno spazio dove raccogliere tutte le foto e i video
+                        della giornata 📸
+                    </p>
+                    <p>
+                        Quel giorno, potrai scansionare il QR code qui sotto,
+                        caricare i tuoi scatti e vedere ciò che hanno immortalato gli altri ospiti!
+                    </p>
+                </div>
+                <img class="qr" src="qr_photos.png" alt="Album Google Photos">
+            </div>
+        </section>
+    </main>
+
+    <div class="bottom-decoration">
+        <img src="./sfondi/Retro.png" alt="">
+        <div class="bottom-blur"></div>
     </div>
+
+    <footer class="final-section">
+        <section class="countdown">
+            <div class="elegant-divider">
+                <span class="line"></span>
+                <img src="favicon.png" alt="">
+                <span class="line"></span>
+            </div>
+
+            <h2 class="subtitle">Mancano</h2>
+
+            <div id="countdown" class="countdown-box">
+                <div class="time">
+                    <span class="number" id="days">130</span>
+                    <span class="label">GIORNI</span>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="time">
+                    <span class="number" id="hours">01</span>
+                    <span class="label">ORE</span>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="time">
+                    <span class="number" id="minutes">12</span>
+                    <span class="label">MINUTI</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts">
+            <h2>Contatti</h2>
+
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h3>Sara</h3>
+                    <a id="phone1"></a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Samuel</h3>
+                    <a id="phone2"></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
