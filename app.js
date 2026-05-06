@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     ${showMenu ? "required" : ""}
                 >
                     <option value="">Menu</option>
-                    <option value="carne">Carne</option>
-                    <option value="vegetariano">Vegetariano</option>
+                    <option value="carne">Onnivoro (carne+pesce)</option>
+                    <option value="vegetariano">Vegano</option>
                 </select>
 
                 <button type="button" class="remove-btn">×</button>
