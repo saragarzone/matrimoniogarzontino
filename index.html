@@ -128,7 +128,6 @@ connect-src https://script.google.com https://script.googleusercontent.com;
         </section>
 
 
-
         <section class="rsvp">
             <h2>Conferma presenza</h2>
 
@@ -136,78 +135,78 @@ connect-src https://script.google.com https://script.googleusercontent.com;
                 action="https://script.google.com/macros/s/AKfycbzdZuvzBKH_BNQhEtA9MdJFX6OqQltWJmUKukHInzdOYVccLbJUiypPYykCghnqCIL-/exec"
                 method="POST" target="hidden_iframe">
 
-                <div class="form-group">
-                    <label>Nome e cognome</label>
-                    <input type="text" name="main_name" required maxlength="100">
+                <div class="form-group full">
+                    <label>Chi siete?</label>
+                    <input type="text" name="name" placeholder="Nome e cognome" required>
                 </div>
 
-                <div class="form-group">
-                    <label>Parteciperai?</label>
+                <div class="form-group full">
+                    <label>Quanti siete?</label>
+                    <input type="text" name="participants" placeholder="1? 2? 3?... 10?" required>
+                </div>
+
+                <div class="form-group full">
+                    <label>Dove andate?</label>
                     <select name="attendance" id="attendance" required>
-                        <option value="">Seleziona</option>
-                        <option value="yes">Sì 🎉</option>
-                        <option value="no">No 😢</option>
+                        <option value="">Scegli un'opzione</option>
+                        <option value="yes">Al vostro matrimonio!</option>
+                        <option value="no">Da un'altra parte, non vengo al matrimonio!</option>
                     </select>
                 </div>
-
                 <div class="form-group full">
-                    <input type="email" name="email" placeholder="Email" required>
+                    <label>Sì, ma chi siete?</label>
+                    <p class="partecipanti">
+                        Clicca sul bottone e aggiungi tutte le persone per cui stai confermando la presenza
+                    </p>
+
+                    <div id="participants-container"></div>
+
+                    <button type="button" id="add-participant" class="add-btn full">
+                        + Aggiungi invitato
+                    </button>
                 </div>
 
-                <div id="guests-section" class="full guests">
-                    <h3>Ospiti</h3>
-                    <p class="hint">Aggiungi una riga per ogni persona, anche te stesso</p>
 
-                    <div id="guests-container">
-                        <div class="guest">
-                            <input type="text" name="guest_name[]" placeholder="Nome">
-
-                            <select name="menu[]">
-                                <option value="">Menù</option>
-                                <option value="carne">Carne</option>
-                                <option value="vegano">Vegano</option>
-                            </select>
-
-                            <input type="text" name="allergies[]" placeholder="Allergie">
-                        </div>
+                <div id="wedding-fields" class="full">
+                    <div class="form-group full">
+                        <label>Qualcosa da dichiarare?</label>
+                        <textarea name="notes"
+                            placeholder="Dicci se hai allergie, intolleranze o altre cose da segnalare"></textarea>
                     </div>
-
-                    <button type="button" id="add-guest" class="add-btn">+ Aggiungi persona</button>
-                </div>
-
-                <div class="form-group full">
-                    <textarea name="notes" placeholder="Note (opzionale)"></textarea>
                 </div>
 
                 <button class="full" type="submit">Conferma presenza</button>
+
             </form>
 
             <iframe name="hidden_iframe" style="display:none;"></iframe>
         </section>
+
         <section class="accommodation">
             <h2>Vieni da fuori?</h2>
             <h3>Lo sappiamo, la location non è dietro l'angolo e vogliamo tutti festeggiare fino a tardi...</h3>
             <p>
                 Allora perchè non approfittare e passare una notte in una stanza di un castello dell'anno mille?!<br>
-                è possibile prenotare varie stanze, da 2-4 persone l'una, ma faccelo sapere per tempo perchè vanno a
+                Sono disponibili varie stanze, da 2-4 persone l'una, ma faccelo sapere per tempo perchè vanno a
                 ruba!
             </p>
-            <button type="button" id="room-btn">Voglio una stanza medievale!</button>
+            <button type="button" id="room-btn">
+                Voglio una stanza medievale
+            </button>
 
-            <div id="room-form" class="room-form">
+            <div id="room-fields" class="room-fields">
                 <div class="form-group">
-                    <label>Nome</label>
-                    <input type="text">
+                    <label>Quante persone?</label>
+                    <input type="number" name="room_people" min="1" placeholder="Numero persone">
                 </div>
 
                 <div class="form-group">
-                    <label>Quanti siete?</label>
-                    <input type="number" min="1">
+                    <label>Quante stanze?</label>
+                    <input type="number" name="room_number" min="1" placeholder="Numero stanze">
                 </div>
-
-                <button type="button">Chiedi una stanza</button>
             </div>
         </section>
+
         <section class="dresscode">
             <h2>Dress code</h2>
             <p>Noi saremo quelli vestiti da sposi, voi vestitevi come vi pare!</p>
