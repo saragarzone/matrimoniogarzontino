@@ -899,7 +899,7 @@ button:hover {
     padding: 0 22px;
 
     color: #e7a565;
-    font-size: clamp(18px, 2vw, 26px);
+    font-size: clamp(14px, 2vw, 20px);
     line-height: 1.35;
 
     text-align: center;
