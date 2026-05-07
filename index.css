@@ -1202,6 +1202,10 @@ button:hover {
     .qr {
         margin-bottom: 0;
     }
+    
+    .center::before {
+        transform: translate(-50%, -55%);
+    }
 }
 
 @media (min-width: 769px) {
