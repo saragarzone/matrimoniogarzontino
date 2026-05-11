@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const participantsContainer = document.getElementById("participants-container");
     const attendance = document.getElementById("attendance");
     const weddingFields = document.getElementById("wedding-fields");
-    const accommodationSection = document.getElementById("accommodation-section");
 
     function createParticipantRow(showMenu = false) {
         return `
@@ -68,10 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const show = attendance.value === "yes";
 
         weddingFields.classList.toggle("show", show);
-
-        if (accommodationSection) {
-            accommodationSection.hidden = !show;
-        }
 
         const mainRow = document.getElementById("main-person-row");
         const mainMenu = document.getElementById("main-menu");
@@ -160,26 +155,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (weddingFields) {
                     weddingFields.classList.remove("show");
                 }
-                if (accommodationSection) {
-                    accommodationSection.hidden = true;
-                }
                 if (participantsContainer) {
                     participantsContainer.innerHTML = "";
                 }
             }, 500);
-        });
-    }
-
-    const roomBtn = document.getElementById("room-btn");
-    const roomFields = document.getElementById("room-fields");
-
-    if (roomBtn && roomFields) {
-        roomBtn.addEventListener("click", () => {
-            roomFields.classList.toggle("show");
-
-            roomBtn.textContent = roomFields.classList.contains("show")
-                ? "Nascondi richiesta stanza"
-                : "Voglio una stanza medievale";
         });
     }
 

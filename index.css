@@ -159,7 +159,6 @@ h3 {
 
 .wedding,
 .map,
-.accommodation,
 .rsvp,
 .gifts-text,
 .gifts-actions,
@@ -174,7 +173,6 @@ h3 {
 }
 
 .map,
-.accommodation,
 .rsvp,
 .gifts-text,
 .gifts-actions,
@@ -185,7 +183,6 @@ h3 {
     flex-direction: column;
 }
 
-.accommodation h2,
 .rsvp h2,
 .gifts-text h2,
 .countdown h2,
@@ -202,7 +199,6 @@ h3 {
 }
 
 .map p,
-.accommodation p,
 .gifts-text p,
 .dresscode p,
 .memories p {
@@ -249,7 +245,7 @@ h3 {
     transform: translate(-50%, 50%);
     width: var(--ball-size);
     height: var(--ball-size);
-    background: url("favicon.png") no-repeat center / contain;
+    background: url("img/favicon.png") no-repeat center / contain;
     filter: drop-shadow(0 0 0.4rem rgba(231, 165, 101, 0.8));
     z-index: 3;
 }
@@ -323,7 +319,7 @@ h3 {
     transform: translate(-50%, -120%);
     width: var(--ball-size);
     height: var(--ball-size);
-    background: url("favicon.png") no-repeat center / contain;
+    background: url("img/favicon.png") no-repeat center / contain;
     filter: drop-shadow(0 0 0.4rem rgba(231, 165, 101, 0.8));
     z-index: 3;
 }
@@ -627,53 +623,7 @@ button:hover {
     grid-column: 1 / -1;
 }
 
-/* =========================
-   ACCOMMODATION
-========================= */
 
-.accommodation,
-.accommodation.active {
-    justify-content: flex-start;
-}
-
-.accommodation.active {
-    gap: 10px;
-}
-
-.accommodation button {
-    margin-top: 16px;
-}
-
-.room-fields {
-    display: none;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 16px;
-}
-
-.room-fields.show {
-    display: grid;
-}
-
-.room-fields .form-group {
-    min-width: 0;
-}
-
-#accommodation-section {
-    grid-column: 1 / -1;
-    width: 100%;
-    min-height: auto;
-    margin-top: 10px;
-}
-
-#accommodation-section[hidden] {
-    display: none;
-}
-
-.dresscode,
-.memories {
-    grid-column: auto;
-}
 
 /* =========================
    GIFTS
@@ -730,7 +680,7 @@ button:hover {
     overflow: hidden;
     margin: 12px 0 24px;
     background-color: #efdfce;
-    background-image: url("amazon-dark.svg");
+    background-image: url("img/amazon-dark.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
@@ -763,6 +713,11 @@ button:hover {
 
 .dresscode {
     justify-content: center;
+}
+
+.dresscode,
+.memories {
+    grid-column: auto;
 }
 
 /* =========================
@@ -899,7 +854,7 @@ button:hover {
     padding: 0 22px;
 
     color: #e7a565;
-    font-size: clamp(14px, 2vw, 20px);
+    font-size: clamp(18px, 2vw, 26px);
     line-height: 1.35;
 
     text-align: center;
@@ -1109,7 +1064,6 @@ button:hover {
     }
 
     .map,
-    .accommodation,
     .rsvp,
     .gifts-text,
     .gifts-actions,
@@ -1202,7 +1156,7 @@ button:hover {
     .qr {
         margin-bottom: 0;
     }
-    
+
     .center::before {
         transform: translate(-50%, -55%);
     }
